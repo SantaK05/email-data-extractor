@@ -14,6 +14,17 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
 )
 
+def create_data_directory():
+    output_dir_bolle = './data/bolle_pdf'
+    output_dir_xc = './data/xc_pdf'
+    output_dir_gomme = './data/gomme_pdf'
+
+    os.makedirs(output_dir_bolle, exist_ok=True)
+    os.makedirs(output_dir_xc, exist_ok=True)
+    os.makedirs(output_dir_gomme, exist_ok=True)
+
+    logging.info(f"Created directories: {output_dir_bolle}, {output_dir_xc}, {output_dir_gomme}")
+
 def connect_to_mailbox():
     username = os.getenv('USERNAME')
     print(username)
@@ -31,6 +42,7 @@ def connect_to_mailbox():
         raise
 
 def main():
+    create_data_directory()
     mail = connect_to_mailbox()
     mail.logout()
 
