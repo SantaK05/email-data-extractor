@@ -12,11 +12,11 @@ dist/
 pip-wheel-metadata/
 
 # Virtual environments
-env/
-.env
 venv/
 .venv/
+.env
 ENV/
+env/
 .env/
 
 # IDEs / editors
@@ -48,3 +48,6 @@ Thumbs.db
 # Secrets / local config
 secrets.yml
 local_settings.py
+
+# Data directory
+data/
